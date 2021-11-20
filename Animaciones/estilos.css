@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.flexContainer {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(196, 215, 233);
+    /* http://cssgradient.io */
+    background-image: linear-gradient(to left,rgb(150, 150, 241),rgb(196, 215, 233));
+
+    display: flex;
+    /* flex-direction: row; Row es el valor por defecto */
+    /* flex-wrap: wrap; */
+    flex-flow: row wrap; /*Primer valor: flex-direction, segundo valor: flex-wrap */ 
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+
+.flexItem {
+    width: 200px;
+    height: 200px;
+    color: white;
+    font-size: 2rem;
+    margin-top: 20px;
+        
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transition: transform 2s solo aplica a una transformacion específica, all aplica a todas */
+    transition:all 2s;
+}
+
+.red {
+    transform: translate(20px, 20px);
+    background-color: rgb(184, 44, 44);
+}
+
+.blue {
+    transform: rotate(45deg);
+    background-color: rgb(48, 48, 211);
+
+}
+
+.green {
+    
+    background-color: rgb(31, 131, 31);
+    transform: scale(1.1, 0.9);
+    animation-name: rotacion;
+    
+  
+}
+
+.green:hover{
+    transform: skew(10deg, 10deg);
+}
+
+@keyframes rotacion {
+    0%{transform: rotate(0deg)}
+    100%{transform: rotate(45deg);
+        background-color: pink;}
+
+}
+/* Order: Por defecto, todos los elementos tienen 0 */
+/* #one {
+    order: 1;
+}
+
+#six {
+    order: -1;
+} */
